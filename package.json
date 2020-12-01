@@ -1,0 +1,59 @@
+{
+  "name": "turnos",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@koa/router": "^10.0.0",
+    "@testing-library/jest-dom": "^5.11.6",
+    "@testing-library/react": "^11.2.2",
+    "@testing-library/user-event": "^12.2.2",
+    "@types/jest": "^26.0.15",
+    "@types/koa": "^2.11.6",
+    "@types/react": "^16.14.2",
+    "@types/react-dom": "^16.9.10",
+    "axios": "^0.21.0",
+    "bcrypt": "^5.0.0",
+    "koa": "^2.13.0",
+    "koa-bodyparser": "^4.3.0",
+    "mongoose": "^5.10.18",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.1.2",
+    "web-vitals": "^0.2.4"
+  },
+  "scripts": {
+    "backend": "ts-node-script ./src/backend/index",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^3.0.0",
+    "@types/koa__router": "^8.0.3",
+    "@types/koa-bodyparser": "^4.3.0",
+    "@types/mongoose": "^5.10.1",
+    "@types/node": "^12.19.6",
+    "html-react-parser": "^0.14.2"
+  }
+}
