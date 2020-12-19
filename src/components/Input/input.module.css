@@ -1,0 +1,13 @@
+.Input{
+    border: 1px solid rgb(184, 184, 184);
+    height: 3.8vh;
+    margin: 1%;
+    border-radius: 7px;
+    text-align:center;
+    color: white;
+    background-color: rgb(165, 165, 165);
+}
+
+.Input :focus{
+    border: none;
+}

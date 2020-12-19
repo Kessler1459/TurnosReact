@@ -1,0 +1,51 @@
+.modaloverlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.657);
+    
+  }
+  
+  .modalwrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    outline: 0;
+  }
+  
+  .modal {
+    border: 1px solid rgb(87, 87, 87);
+    width: 35vw;
+    z-index: 100;
+    background-image: linear-gradient(to right top, #000000 0%, #525252 100%);
+    position: relative;
+    margin: 1.75rem auto;
+    border-radius: 7px;
+    max-width: 500px;
+    padding: 2rem;
+    box-shadow: 10px 10px #00000038;
+  }
+  
+  .modalheader {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  .modalclosebutton {
+    font-size: 1.4rem;
+    font-weight: 700;
+    line-height: 1;
+    color: #000;
+    opacity: .3;
+    cursor: pointer;
+    border: none;
+    background-color: rgba(104, 104, 104, 0);
+  }

@@ -1,0 +1,12 @@
+.OkButton{
+    border: 1px solid green;
+    height: 3.8vh;
+    width: fit-content;
+    margin: 1%;
+    border-radius: 7px;
+    border-collapse: separate;
+}
+
+.OkButton :hover{
+
+}
