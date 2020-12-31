@@ -5,9 +5,10 @@ import RegisterForm from "../RegisterForm";
 
 interface Props {
     login: (us: User) => void;
+    hide: () => void;
 }
 
-const AuthModal: React.FC<Props> = ({ login }) => {
+const AuthModal: React.FC<Props> = ({ login, hide }) => {
     const [form, setForm] = useState(true);
 
     const toggleForm = () => {
@@ -16,7 +17,7 @@ const AuthModal: React.FC<Props> = ({ login }) => {
 
     return form ? (
         <>
-            <LoginForm login={login}></LoginForm>
+            <LoginForm hide={hide} login={login}></LoginForm>
             <p>
                 Not registered? <br />
                 <i onClick={toggleForm}>Sign up here</i>
@@ -24,7 +25,7 @@ const AuthModal: React.FC<Props> = ({ login }) => {
         </>
     ) : (
         <>
-            <RegisterForm login={login}></RegisterForm>
+            <RegisterForm hide={hide} login={login}></RegisterForm>
             <p>
                 <i onClick={toggleForm}>Or sign in here</i>
             </p>

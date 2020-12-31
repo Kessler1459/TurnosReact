@@ -14,9 +14,10 @@ interface User {
 
 interface Props {
     login: ( usr: TUser ) => void;
+    hide:() => void
 }
 
-const RegisterForm: React.FC<Props> = ({login}) => {
+const RegisterForm: React.FC<Props> = ({login,hide}) => {
     const [user, setUser] = useState<User>({ email:"",username: "", password: "" });
 
     const handleSubmit = (e: FormEvent) => {
@@ -30,6 +31,7 @@ const RegisterForm: React.FC<Props> = ({login}) => {
                     id: response.data.id,
                     email: response.data.email,
                 });
+                hide();
             }
         });
     };

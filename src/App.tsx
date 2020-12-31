@@ -30,7 +30,7 @@ function App() {
     return (
         <Router>
             <div className="App">
-                <NavBar login={handleLogin} />
+                <NavBar user={user} login={handleLogin} />
                 <Switch>
                     <Route path="/" component={Home} exact />
                     <Route

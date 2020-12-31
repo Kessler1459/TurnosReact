@@ -3,11 +3,9 @@ import ReactDOM from "react-dom";
 import styles from "./Modal.module.css";
 
 const Modal = (props: {
-    modalContent: JSX.Element;
-    hide: (
-        event: React.MouseEvent<HTMLButtonElement, globalThis.MouseEvent>
-    ) => void;
-    isShowing: boolean;
+    modalContent: JSX.Element,
+    hide: () => void,
+    isShowing: boolean
 }) =>
     props.isShowing
         ? ReactDOM.createPortal(

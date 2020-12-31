@@ -1,11 +1,11 @@
 .Input{
-    border: 1px solid rgb(184, 184, 184);
-    height: 3.8vh;
+    border: 1px solid #5C73F2;
+    height: 5vh;
+    width: 100%;
     margin: 1%;
     border-radius: 7px;
     text-align:center;
-    color: white;
-    background-color: rgb(165, 165, 165);
+    font-size: inherit;
 }
 
 .Input :focus{

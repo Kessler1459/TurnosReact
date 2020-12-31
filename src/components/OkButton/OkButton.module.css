@@ -1,12 +1,16 @@
 .OkButton{
-    border: 1px solid green;
+    font-size: inherit;
+    font-weight: 800;
+    border: 1px solid black;
     height: 3.8vh;
     width: fit-content;
     margin: 1%;
+    background-color: #829FD9;
     border-radius: 7px;
     border-collapse: separate;
+    cursor: pointer;
 }
 
 .OkButton :hover{
-
+    background-color: #5C73F2;
 }

@@ -1,11 +1,12 @@
 .LoginForm{
     width: 30vw;
-    height: 50vh;
+    height: 40vh;
     text-align: center;
     padding: 20px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    place-items: center;
 }
 
 i{

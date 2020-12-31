@@ -6,33 +6,37 @@ import User from "../../User";
 import AuthModal from "../AuthModal";
 
 interface Props {
-    login: ( usr: User ) => void;
+    user: User;
+    login: (usr: User) => void;
 }
 
-export const NavBar: React.FC<Props> = ({login}) => {
+export const NavBar: React.FC<Props> = ({ user, login }) => {
     const { isShowing, toggle } = useModal();
 
     return (
         <>
             <nav className={styles.nav}>
                 <ul>
-                    <li>
-                        <Link className={styles.link} to="/">
+                    <li className={styles.item}>
+                        <Link to="/">
                             Home
                         </Link>
                     </li>
-                    <li className={styles.link} onClick={toggle}>
-                        Login
-                    </li>
-                    <li>
-                        <Link className={styles.link} to="/account">
-                            Account
-                        </Link>
-                    </li>
+                    {user.username !== "" ? (
+                        <li className={styles.item}>
+                            <Link to="/account">
+                                Account
+                            </Link>
+                        </li>
+                    ) : (
+                        <li className={styles.item} onClick={toggle}>
+                            Login
+                        </li>
+                    )}
                 </ul>
             </nav>
             <Modal
-                modalContent={<AuthModal login={login} />}
+                modalContent={<AuthModal login={login} hide={toggle} />}
                 isShowing={isShowing}
                 hide={toggle}
             />

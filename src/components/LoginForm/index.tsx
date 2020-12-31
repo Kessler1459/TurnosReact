@@ -17,9 +17,10 @@ interface User {
 
 interface Props {
     login: ( usr: TUser ) => void;
+    hide: () => void;
 }
 
-export const LoginForm:React.FC<Props> = ({login}) => {
+export const LoginForm:React.FC<Props> = ({login,hide}) => {
     const [user, setUser] = useState<User>({ username: "", password: "" });
 
     const handleSubmit = (e: FormEvent) => {
@@ -33,6 +34,7 @@ export const LoginForm:React.FC<Props> = ({login}) => {
                     id: response.data.id,
                     email: response.data.email,
                 });
+                hide();
             }
         });
     };
