@@ -29,18 +29,22 @@ const Horario = ({
                 <strong>{hour}</strong>
             </td>
             <td>Not available</td>
-            {user.admin? (
-                <>
-                    <td>{turno?.description}</td>
-                    <td>{turno?.user?.username}</td>
-                    <td colSpan={3}>{turno?.user?.email}</td>
-                </>
+            {user.id ? (
+                user.admin ? (
+                    <>
+                        <td>{turno?.description}</td>
+                        <td>{turno?.user?.username}</td>
+                        <td colSpan={3}>{turno?.user?.email}</td>
+                    </>
+                ) : (
+                    <td></td>
+                )
             ) : (
-                <td></td>
+                <></>
             )}
         </tr>
     );
-    
+
     const blueRow = () => (
         <tr key={hour} className={styles.libre}>
             <td>
