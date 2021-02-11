@@ -2,32 +2,25 @@ import styles from "./NavBar.module.css";
 import { Link } from "react-router-dom";
 import Modal from "../Modal";
 import useModal from "../../useModal";
-import User from "../../User";
 import AuthModal from "../AuthModal";
+import { useContext } from "react";
+import { UserContext } from "../../userContext";
 
-interface Props {
-    user: User;
-    login: (usr: User) => void;
-}
-
-export const NavBar: React.FC<Props> = ({ user, login }) => {
+export const NavBar: React.FC = () => {
     const { isShowing, toggle } = useModal();
+    const { user } = useContext(UserContext);
 
     return (
         <>
             <nav className={styles.nav}>
                 <ul>
-                    <li className={styles.item}>
-                        <Link to="/">
-                            Home
+                    <Link to="/">
+                        <li className={styles.item}>Home </li>
+                    </Link>
+                    {user.username ? (
+                        <Link to="/account">
+                            <li className={styles.item}>Account </li>
                         </Link>
-                    </li>
-                    {user.username !== "" ? (
-                        <li className={styles.item}>
-                            <Link to="/account">
-                                Account
-                            </Link>
-                        </li>
                     ) : (
                         <li className={styles.item} onClick={toggle}>
                             Login
@@ -36,7 +29,7 @@ export const NavBar: React.FC<Props> = ({ user, login }) => {
                 </ul>
             </nav>
             <Modal
-                modalContent={<AuthModal login={login} hide={toggle} />}
+                modalContent={<AuthModal hide={toggle} />}
                 isShowing={isShowing}
                 hide={toggle}
             />

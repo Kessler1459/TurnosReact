@@ -30,7 +30,9 @@ const Modal = (props: {
                                   <span aria-hidden="true">&times;</span>
                               </button>
                           </div>
+                          <div className={styles.modalBody}>
                           {props.modalContent}
+                          </div>
                       </div>
                   </div>
               </>,

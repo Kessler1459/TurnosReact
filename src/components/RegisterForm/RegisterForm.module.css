@@ -2,6 +2,7 @@
     width: 30vw;
     height: 50vh;
     text-align: center;
+    align-items: center;
     padding: 20px;
     display: flex;
     flex-direction: column;

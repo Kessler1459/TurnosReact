@@ -12,17 +12,20 @@
         "@types/koa": "^2.11.6",
         "@types/react": "^16.14.2",
         "@types/react-dom": "^16.9.10",
-        "axios": "^0.21.0",
+        "axios": "^0.21.1",
         "bcrypt": "^5.0.0",
         "dotenv": "^8.2.0",
+        "googleapis": "^67.0.0",
         "jsonwebtoken": "^8.5.1",
         "koa": "^2.13.0",
         "koa-bodyparser": "^4.3.0",
         "mongoose": "^5.11.1",
+        "n": "^7.0.0",
         "react": "^17.0.1",
         "react-dom": "^17.0.1",
         "react-router-dom": "^5.2.0",
         "react-scripts": "4.0.1",
+        "stable": "^0.1.8",
         "ts-node": "^9.0.0",
         "typescript": "^4.1.2",
         "web-vitals": "^0.2.4"
@@ -59,12 +62,14 @@
     "devDependencies": {
         "@types/bcrypt": "^3.0.0",
         "@types/jsonwebtoken": "^8.5.0",
-        "@types/koa-bodyparser": "^4.3.0",
         "@types/koa__cors": "^3.0.2",
         "@types/koa__router": "^8.0.3",
+        "@types/koa-bodyparser": "^4.3.0",
         "@types/mongoose": "^5.10.1",
         "@types/node": "^12.19.8",
         "@types/react-router-dom": "^5.1.6",
-        "html-react-parser": "^0.14.2"
+        "eslint-plugin-react-hooks": "^4.2.0",
+        "html-react-parser": "^0.14.2",
+        "sass-loader": "^8.0.2"
     }
 }

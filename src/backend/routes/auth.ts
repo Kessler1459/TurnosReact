@@ -13,6 +13,7 @@ router.post("/register", ({ response, request,cookies }) =>
             username: request.body.username,
             email: request.body.email,
             password: pass,
+            admin:false
         }).then((createdUser) => {
             response.body = {
                 username: createdUser.username,
@@ -20,7 +21,7 @@ router.post("/register", ({ response, request,cookies }) =>
                 email: createdUser.email,
             };
             const token = Jwt.sign(
-                { _id: createdUser.id },
+                createdUser.id,
                 process.env.JWT_TOKEN as string
             );
             cookies.set("usrtoken", token);
@@ -37,7 +38,7 @@ router.post("/login", ({ response, request, cookies }) =>
                 (result) => {
                     response.status = result ? 200 : 401;
                     const token = Jwt.sign(
-                        { _id: user.id },
+                        user.id,
                         process.env.JWT_TOKEN as string
                     );
                     response.body = {

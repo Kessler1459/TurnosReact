@@ -1,28 +1,36 @@
 import { Context } from "koa";
 import Router from "@koa/router";
-import verifyToken from "./verifyToken";
 import { UserModel } from "../models/User";
 import Jwt from "jsonwebtoken";
 
 const router = new Router();
 
-router.get("/account", verifyToken, (ctx:Context) => {
-    return UserModel.findById(Jwt.decode(ctx.cookies.get("usrtoken") as string)).then(
-        (user) => {
-            if(user){            
-                ctx.status=200;
-                ctx.body = {
-                    id: user?.id,
-                    username: user?.username,
-                    email: user?.email,
-                };
+router.get("/account", (ctx:Context) => {
+    const cookie=ctx.cookies.get("usrtoken");
+    if(cookie){
+        return getUser(cookie).then(
+            (user) => {
+                if(user){            
+                    ctx.status=200;
+                    ctx.body = {
+                        id: user?.id,
+                        username: user?.username,
+                        email: user?.email,
+                        admin: user.admin
+                    };
+                }
             }
-            else {
-                ctx.response.status = 401;
-                ctx.body = {};
-            }
-        }
-    );
+        );
+    }
+    else{
+        ctx.status=200;
+        ctx.body={};
+        return {};
+    }
 });
+
+export const getUser = (userToken:string) =>
+    UserModel.findById(Jwt.decode(userToken));
+
 
 export default router;

@@ -1,6 +1,6 @@
-.LoginForm{
-    width: 20vw;
-    height: 30vh;
+.content{
+    width: 90%;
+    height: 70%;
     text-align: center;
     padding: 20px;
     display: flex;
@@ -9,8 +9,7 @@
     place-items: center;
 }
 
-i{
-    color: rgb(105, 105, 255);
-    cursor: pointer;
-    text-decoration: underline;
+.button{
+    margin-top: 4%;
+    font-size: 1.5em;
 }

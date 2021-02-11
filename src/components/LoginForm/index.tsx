@@ -1,14 +1,11 @@
-import React, {
-    ChangeEvent,
-    FormEvent,
-    useState,
-} from "react";
+import React, { ChangeEvent, FormEvent, useContext, useState } from "react";
 import Axios from "axios";
 import styles from "./LoginForm.module.css";
 import Input from "../Input";
 import OkButton from "../OkButton";
 import Title from "../Title";
-import TUser from "../../User";
+import { UserContext } from "../../userContext";
+
 
 interface User {
     username: string;
@@ -16,12 +13,12 @@ interface User {
 }
 
 interface Props {
-    login: ( usr: TUser ) => void;
     hide: () => void;
 }
 
-export const LoginForm:React.FC<Props> = ({login,hide}) => {
+export const LoginForm: React.FC<Props> = ({ hide }) => {
     const [user, setUser] = useState<User>({ username: "", password: "" });
+    const contx = useContext(UserContext);
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
@@ -29,10 +26,11 @@ export const LoginForm:React.FC<Props> = ({login,hide}) => {
             withCredentials: true,
         }).then((response) => {
             if ((response.status = 200)) {
-                login({
+                contx.updateUser({
                     username: response.data.username,
                     id: response.data.id,
                     email: response.data.email,
+                    admin: response.data.admin
                 });
                 hide();
             }

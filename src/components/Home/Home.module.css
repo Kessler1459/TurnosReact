@@ -1,0 +1,32 @@
+.cont{
+    width: 92vw;
+    height: 70vh;
+    background-color: #333;
+    border-radius: 1em;
+    border: #0081A3 solid 2px;
+    margin: 0 auto;
+    padding: 1vh 1vw;
+}
+
+.flexcont{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.selectCont{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+.calend{
+    width: 25vw;
+    height: 5vh;
+    border-radius: 1em;
+    font-size: 1.7em;
+}
+

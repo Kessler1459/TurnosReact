@@ -1,0 +1,19 @@
+
+.tableHorarios {
+    margin-top:1%;
+    color: black;
+    width: 60vw;
+    height: 50vh;
+    border-radius:1em;
+    border-collapse: collapse;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    
+}
+
+tr{
+    border-bottom: 1px solid #333;
+}
+
+
+

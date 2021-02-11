@@ -1,0 +1,21 @@
+.ocupado{
+    background: linear-gradient(120deg, #A35000 1%, #F07500 83%);
+}
+
+.libre{
+    background: linear-gradient(120deg, #0081A3 1%, #00BCF0 83%); 
+}
+
+.libre:hover{
+    filter: opacity(0.6);
+}
+
+.ocupado:hover{
+    filter: opacity(0.6);
+}
+
+tr:first-child td:first-child { border-top-left-radius: 10px; }
+tr:first-child td:last-child { border-top-right-radius: 10px; }
+tr:last-child td:first-child { border-bottom-left-radius: 10px; }
+tr:last-child td:last-child { border-bottom-right-radius: 10px; }
+

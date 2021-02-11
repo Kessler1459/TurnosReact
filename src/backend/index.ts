@@ -3,6 +3,7 @@ import Koa from "koa";
 import KoaBodyParser from "koa-bodyparser";
 import AuthRooter from "./routes/auth";
 import AccountRouter from "./routes/account";
+import TurnosRouter from "./routes/turnos";
 import cors from "@koa/cors";
 
 mongooseConnect();
@@ -15,7 +16,8 @@ koa.use(cors({
 koa.use(KoaBodyParser());
 koa.use(AuthRooter.routes());
 koa.use(AccountRouter.routes());
+koa.use(TurnosRouter.routes());
 
 koa.listen(9000).on("listening", () => {
-    console.log("server listening");
+    console.log("server listening at port 9000");
 });
